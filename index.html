@@ -10,10 +10,12 @@
     <p></p>
     <p></p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Red_and_blue_pill.jpg/1200px-Red_and_blue_pill.jpg">
+    
     <script>
         'use strict';
         var red_or_blue;
-        var red_blue_toggle = 2;       
+        var red_blue_toggle = 2;
+        var red_or_blue_response;       
         var user_name;
         var second_question;
         var military;
@@ -25,7 +27,7 @@
         
         // first question
         
-        while (red_blue_toggle = 2) {
+        do {
             red_or_blue = prompt("So what will it be?  Red or Blue?");       
             red_or_blue = red_or_blue.toLowerCase();
             if (red_or_blue === "red") {
@@ -38,9 +40,10 @@
             else { 
                 red_or_blue_response = "No, no.  We are grown-ups here.  Choose red or blue.";
                 red_blue_toggle = 2;
-            }
-        alert(red_or_blue_response);
-        }
+            } 
+            alert(red_or_blue_response);
+        } while (red_blue_toggle === 2);
+        
         
         // second question
         
@@ -56,7 +59,7 @@
         // third question
 
         military = prompt(user_name + " are you aware that the subject of your curiosity was in the military?")
-        military = military.toLowercase();
+        military = military.toLowerCase();
         if (military === "yes" || military === "y") {
             military_toggle = 0;
         } else { 
@@ -80,7 +83,7 @@
         // fourth question
 
         creative = prompt("And do you know your query target is an artist?")
-        creative = creative.toLowercase();
+        creative = creative.toLowerCase();
         if (creative === "yes" || creative === "y") {
             creative_toggle = 0;
         } else { 
@@ -98,7 +101,7 @@
         if (creative_toggle === 0 && red_blue_toggle === 1) { 
             creative_response = "Well, well, " + user_name + ".  Two correct answers in a row.  Not bad for one who took the blue pill.";
         }
-        console.log("Knows creativeis " + creative);
+        console.log("Knows creative is " + creative);
         alert (creative_response);  
         
         // At this point I could code more questions here but I would just be copying and pasting then
