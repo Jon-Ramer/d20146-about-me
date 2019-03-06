@@ -22,24 +22,25 @@
         var creative;
         var creative_toggle;
         var creative_response;
-
+        
         // first question
-
-        //while (red_blue_toggle = 2) {
+        
+        while (red_blue_toggle = 2) {
             red_or_blue = prompt("So what will it be?  Red or Blue?");       
-            if (red_or_blue === "red" || red_or_blue === "Red" || red_or_blue === "RED") {
+            red_or_blue = red_or_blue.toLowerCase();
+            if (red_or_blue === "red") {
                 red_or_blue_response = "Congratulations.  You have choosen... wisely.";
                 red_blue_toggle = 0;
-            } else { 
-                if (red_or_blue === "blue" || red_or_blue === "Blue" || red_or_blue === "BLUE") {
+            } else if (red_or_blue === "blue") {
                 red_or_blue_response = "Blue?  So sad.  I thought you had potential.";
                 red_blue_toggle = 1;
-            } else { 
+                } 
+            else { 
                 red_or_blue_response = "No, no.  We are grown-ups here.  Choose red or blue.";
                 red_blue_toggle = 2;
             }
         alert(red_or_blue_response);
-        //}
+        }
         
         // second question
         
@@ -47,61 +48,63 @@
             second_question = "So intrepid Ponderer of the Fantastic, what is your name?";
         } else { 
             second_question = "Your lack of imagination piques my interest.  What is your name?"
-            }
+        }
         user_name = prompt(second_question);
         console.log("Victim's name is: "+ user_name);
         alert("Well then " + user_name + ", let's test your knowledge of the amazing, shall we?");
-
+        
         // third question
 
-        military = prompt("Are you aware that the subject of your curiosity was in the military?")
-        if (military === "Yes" || military === "yes" || military === "Y" || military === "YES") {
+        military = prompt(user_name + " are you aware that the subject of your curiosity was in the military?")
+        military = military.toLowercase();
+        if (military === "yes" || military === "y") {
             military_toggle = 0;
         } else { 
             military_toggle = 1;
         }
         if (military_toggle === 0 && red_blue_toggle === 0) {
             military_response = "Well done " + user_name + "!  Your knowledge is vast.  Let's proceed.";
-        } else {
-            if (military_toggle === 1 && red_blue_toggle === 0) {
-                military_response = "Pity, you should pay more attention " + user_name + ".  Onwards we go."
-        } else {
-            if (military_toggle === 1 && red_blue_toggle === 1) {
+        } 
+        if (military_toggle === 1 && red_blue_toggle === 0) {
+            military_response = "Pity, you should pay more attention " + user_name + ".  Onwards we go."
+        } 
+        if (military_toggle === 1 && red_blue_toggle === 1) {
             military_response = "No surprise there with your imagination, " + user_name + ", or lack thereof.  Next.";
-        } else { 
+        }  
+        if (military_toggle === 0 && red_blue_toggle === 1) {
             military_response = "What a lucky guess!  Perhaps there is hope you you afterall " + user_name + ".  Moving on.";
         }
-
         console.log("Knows military is " + military);
         alert (military_response);
 
         // fourth question
 
         creative = prompt("And do you know your query target is an artist?")
-        if (creative === "Yes" || creative === "yes" || creative === "Y" || creative === "YES") {
+        creative = creative.toLowercase();
+        if (creative === "yes" || creative === "y") {
             creative_toggle = 0;
         } else { 
             creative_toggle = 1;
         }
         if (creative_toggle === 0 && red_blue_toggle === 0) {
             creative_response = "You are wise " + user_name + ".  And most fortunate to know the One and Only Jon.";
-        } else {
-            if (creative_toggle === 1 && red_blue_toggle === 0) {
+        }
+        if (creative_toggle === 1 && red_blue_toggle === 0) {
                creative_response = "You took the red pill, right " + user_name + "?  Creativity is his speciality....";
-        } else {
-            if (creative_toggle === 1 && red_blue_toggle === 1) {
+        }
+        if (creative_toggle === 1 && red_blue_toggle === 1) {
                creative_response = "Well, it's obvious why you opted for the blue pill, " + user_name + ".  Good luck with your boring life.";
-        } else { 
+        }
+        if (creative_toggle === 0 && red_blue_toggle === 1) { 
             creative_response = "Well, well, " + user_name + ".  Two correct answers in a row.  Not bad for one who took the blue pill.";
         }
-
         console.log("Knows creativeis " + creative);
         alert (creative_response);  
-
-        // At this point I could code another question here but I would just be copying and pasting then
+        
+        // At this point I could code more questions here but I would just be copying and pasting then
         // changing the names of the variables and wording of the responses.
+    
     </script>
-
 <p>Congratulations, you've discovered that Jon Ramer is a highly creative former military person.</p>
-
 </body>
+   
