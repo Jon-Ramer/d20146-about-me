@@ -3,111 +3,319 @@
 
 <head>
     <title>Intro to Jon Ramer</title>
+
+
 </head>
 
 <body>
+ 
     <h1>Are You Ready to Open Your Mind?</h1>
     <p></p>
-    <p></p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Red_and_blue_pill.jpg/1200px-Red_and_blue_pill.jpg">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Red_and_blue_pill.jpg/1200px-Red_and_blue_pill.jpg" width=50% height=50%>
+
+<script>  
+    'use strict';
+    var correct_answers = 0;
+    var red_or_blue;
+    var red_blue_toggle = 2;
+    var red_or_blue_response;       
+    var user_name;
+    var second_question;
+    var military;
+    var military_toggle;
+    var military_response;
+    var creative;
+    var creative_toggle;
+    var creative_response;
+    var foreign;
+    var foreign_toggle;
+    var foreign_response;
+    var inventor;
+    var inventor_toggle;
+    var inventor_response;
+    var traveler;
+    var traveler_toggle;
+    var traveler_response;
+    var knowledge_response;
+    var how_many;
+    var how_many_response;
+    var i = 0;
+    var which_continent;
+    var continent_response;
+    var continent_toggle;
+    var wrap_up_response;
+    var continents; 
+    continents = ['north america', 'south america', 'europe', 'africa', 'asia', 'australia', 'antarctica'];
     
-    <script>
-        'use strict';
-        var red_or_blue;
-        var red_blue_toggle = 2;
-        var red_or_blue_response;       
-        var user_name;
-        var second_question;
-        var military;
-        var military_toggle;
-        var military_response;
-        var creative;
-        var creative_toggle;
-        var creative_response;
-        
-        // first question
-        
-        do {
-            red_or_blue = prompt("So what will it be?  Red or Blue?");       
-            red_or_blue = red_or_blue.toLowerCase();
-            if (red_or_blue === "red") {
-                red_or_blue_response = "Congratulations.  You have choosen... wisely.";
-                red_blue_toggle = 0;
-            } else if (red_or_blue === "blue") {
-                red_or_blue_response = "Blue?  So sad.  I thought you had potential.";
-                red_blue_toggle = 1;
-                } 
-            else { 
-                red_or_blue_response = "No, no.  We are grown-ups here.  Choose red or blue.";
-                red_blue_toggle = 2;
+    // start up question
+    
+    do {
+        red_or_blue = prompt("If you wish to learn about The Jonald, you must choose your path.  So what will it be Visitor?  Red or Blue?");
+        red_or_blue = red_or_blue.toLowerCase();
+        if (red_or_blue === "red") {
+            red_or_blue_response = "Congratulations.  You have choosen... wisely.";
+            red_blue_toggle = 0;
+        } else if (red_or_blue === "blue") {
+            red_or_blue_response = "Blue?  So sad.  I thought you had potential.";
+            red_blue_toggle = 1;
             } 
-            alert(red_or_blue_response);
-        } while (red_blue_toggle === 2);
-        
-        
-        // second question
-        
-        if (red_blue_toggle === 0) {
-            second_question = "So intrepid Ponderer of the Fantastic, what is your name?";
-        } else { 
-            second_question = "Your lack of imagination piques my interest.  What is your name?"
-        }
-        user_name = prompt(second_question);
-        console.log("Victim's name is: "+ user_name);
-        alert("Well then " + user_name + ", let's test your knowledge of the amazing, shall we?");
-        
-        // third question
-
-        military = prompt(user_name + " are you aware that the subject of your curiosity was in the military?")
-        military = military.toLowerCase();
-        if (military === "yes" || military === "y") {
-            military_toggle = 0;
-        } else { 
-            military_toggle = 1;
-        }
-        if (military_toggle === 0 && red_blue_toggle === 0) {
-            military_response = "Well done " + user_name + "!  Your knowledge is vast.  Let's proceed.";
+        else { 
+            red_or_blue_response = "No, no.  We are grown-ups here.  Choose red or blue.";
+            red_blue_toggle = 2;
         } 
-        if (military_toggle === 1 && red_blue_toggle === 0) {
-            military_response = "Pity, you should pay more attention " + user_name + ".  Onwards we go."
-        } 
-        if (military_toggle === 1 && red_blue_toggle === 1) {
-            military_response = "No surprise there with your imagination, " + user_name + ", or lack thereof.  Next.";
-        }  
-        if (military_toggle === 0 && red_blue_toggle === 1) {
-            military_response = "What a lucky guess!  Perhaps there is hope you you afterall " + user_name + ".  Moving on.";
-        }
-        console.log("Knows military is " + military);
-        alert (military_response);
-
-        // fourth question
-
-        creative = prompt("And do you know your query target is an artist?")
-        creative = creative.toLowerCase();
-        if (creative === "yes" || creative === "y") {
-            creative_toggle = 0;
-        } else { 
-            creative_toggle = 1;
-        }
-        if (creative_toggle === 0 && red_blue_toggle === 0) {
-            creative_response = "You are wise " + user_name + ".  And most fortunate to know the One and Only Jon.";
-        }
-        if (creative_toggle === 1 && red_blue_toggle === 0) {
-               creative_response = "You took the red pill, right " + user_name + "?  Creativity is his speciality....";
-        }
-        if (creative_toggle === 1 && red_blue_toggle === 1) {
-               creative_response = "Well, it's obvious why you opted for the blue pill, " + user_name + ".  Good luck with your boring life.";
-        }
-        if (creative_toggle === 0 && red_blue_toggle === 1) { 
-            creative_response = "Well, well, " + user_name + ".  Two correct answers in a row.  Not bad for one who took the blue pill.";
-        }
-        console.log("Knows creative is " + creative);
-        alert (creative_response);  
-        
-        // At this point I could code more questions here but I would just be copying and pasting then
-        // changing the names of the variables and wording of the responses.
+        alert(red_or_blue_response);
+    } while (red_blue_toggle === 2);    
     
-    </script>
-<p>Congratulations, you've discovered that Jon Ramer is a highly creative former military person.</p>
+    // username question
+    
+    if (red_blue_toggle === 0) {
+        second_question = "So intrepid Ponderer of the Fantastic, what is your name?";
+    } else { 
+        second_question = "Your lack of imagination piques my interest.  What is your name?"
+    }
+    user_name = prompt(second_question);
+    console.log("Victim's name is: "+ user_name);
+    alert("Well then " + user_name + ", let's test your knowledge of the amazing, shall we?");
+    
+    // first question
+
+    military = prompt(user_name + ", are you aware that the subject of your curiosity was in the military?")
+    military = military.toLowerCase();
+    if (military === "yes" || military === "y") {
+        military_toggle = 0;
+    } else { 
+        military_toggle = 1;
+    }
+    if (military_toggle === 0 && red_blue_toggle === 0) {
+        military_response = "Well done " + user_name + "!  Your knowledge is vast.  Let's proceed.";
+        correct_answers++;
+    } 
+    if (military_toggle === 1 && red_blue_toggle === 0) {
+        military_response = "Pity, you should pay more attention " + user_name + ".  Onwards we go."
+    } 
+    if (military_toggle === 1 && red_blue_toggle === 1) {
+        military_response = "No surprise there with your imagination, " + user_name + ", or lack thereof.  Next.";
+    }  
+    if (military_toggle === 0 && red_blue_toggle === 1) {
+        military_response = "What a lucky guess!  Perhaps there is hope you you afterall " + user_name + ".  Moving on.";
+        correct_answers++;
+    }
+    console.log("Knows military is " + military);
+    alert (military_response);
+
+    // second question
+
+    creative = prompt("And do you know your query target is an artist?")
+    creative = creative.toLowerCase();
+    if (creative === "yes" || creative === "y") {
+        creative_toggle = 0;
+    } else { 
+        creative_toggle = 1;
+    }
+    if (creative_toggle === 0 && red_blue_toggle === 0) {
+        creative_response = "You are wise " + user_name + ".  And most fortunate to know the One and Only Jon.";
+        correct_answers++;
+    }
+    if (creative_toggle === 1 && red_blue_toggle === 0) {
+        creative_response = "You took the red pill, right " + user_name + "?  Creativity is his speciality....";
+    }
+    if (creative_toggle === 1 && red_blue_toggle === 1) {
+        creative_response = "Well, it's obvious why you opted for the blue pill, " + user_name + ".  Good luck with your boring life.";
+    }
+    if (creative_toggle === 0 && red_blue_toggle === 1) { 
+        correct_answers++;
+        creative_response = "Well, well, " + user_name + ".  Two correct answers in a row.  Not bad for one who took the blue pill.";
+    }
+    console.log("Knows creative is " + creative);
+    alert (creative_response);  
+    
+    // third question
+
+    foreign = prompt("Did you know he was born outside the United States?")
+    foreign = foreign.toLowerCase();
+    if (foreign === "yes" || foreign === "y") {
+        foreign_toggle = 0;
+    } else { 
+        foreign_toggle = 1;
+    }
+    if (foreign_toggle === 0 && red_blue_toggle === 0) {
+        foreign_response = "Yes!  You are correct " + user_name + "!  Next question.";
+        correct_answers++;
+    } 
+    if (foreign_toggle === 1 && red_blue_toggle === 0) {
+        foreign_response = "Nope!  Maybe next question."
+    } 
+    if (foreign_toggle === 1 && red_blue_toggle === 1) {
+        foreign_response = "As expected, WRONG!  Blue is your lifestyle isn't it " + user_name + ".  Next.";
+    }  
+    if (foreign_toggle === 0 && red_blue_toggle === 1) {
+        correct_answers++;
+        foreign_response = "A right guess!  Or maybe you aren't guessing " + user_name + "?  Next....";
+    }
+    console.log("Knows foreign is " + foreign);
+    alert (foreign_response);
+
+    // fourth question
+
+    inventor = prompt("Necessity is the Mother of Invention.  Are you aware he has patented inventions in the United States?")
+    inventor = inventor.toLowerCase();
+    if (inventor === "yes" || inventor === "y") {
+        inventor_toggle = 0;
+    } else { 
+        inventor_toggle = 1;
+    }
+    if (inventor_toggle === 0 && red_blue_toggle === 0) {
+        inventor_response = "Well, well " + user_name + ".   Most impressive.  Please continue.";
+        correct_answers++;
+    } 
+    if (inventor_toggle === 1 && red_blue_toggle === 0) {
+        inventor_response = "Sigh.  So close, but so far.  Next question."
+    } 
+    if (inventor_toggle === 1 && red_blue_toggle === 1) {
+        inventor_response = "Are you even trying Blue " + user_name + "?  It doesn't look like it.  Next.";
+    }  
+    if (inventor_toggle === 0 && red_blue_toggle === 1) {
+        correct_answers++;
+        inventor_response = "A correct answer!  Will wonders never cease to occur?  Next up....";
+    }
+    console.log("Knows inventor is " + inventor);
+    alert (inventor_response);
+
+    // fifth question
+
+    traveler = prompt("The world is a small place.  Do you know he has traveled around it multiple times?")
+    traveler = traveler.toLowerCase();
+    if (traveler === "yes" || inventor === "y") {
+        traveler_toggle = 0;
+    } else { 
+        traveler_toggle = 1;
+    }
+    if (traveler_toggle === 0 && red_blue_toggle === 0) {
+        traveler_response = "Quite true " + user_name + ".  You are an attentive person.  Now to challenge you....";
+        correct_answers++;
+    } 
+    if (traveler_toggle === 1 && red_blue_toggle === 0) {
+        traveler_response = "Perhaps you choose the wrong pill?  The next question is more difficult."
+    } 
+    if (traveler_toggle === 1 && red_blue_toggle === 1) {
+        traveler_response = "You are welcome to go back to working as a checkout person any time " + user_name + ".  It's about to get difficult.";
+    }  
+    if (traveler_toggle === 0 && red_blue_toggle === 1) {
+        correct_answers++;
+        traveler_response = "Correct, but everyone gets lucky every now and them.  Next up: the hard questions.";
+    }
+    console.log("Knows traveler is " + traveler);
+    console.log("Correct " + correct_answers);
+    alert (traveler_response);
+
+// guessing time!
+
+// correct_answers = correct_answers + 1;
+console.log("Correct switch " + correct_answers);
+switch (correct_answers) {
+case 1:
+    knowledge_response = "You really embraced that Blue pill didn't you?  Nice to have this much time to waste.";
+    break;
+case 2:
+    knowledge_response = "Blue is your color, and it shows.";
+    break;
+case 3:
+    knowledge_response = "Paying attention isn't one of your strong suits, but at least you tried.";
+    break;
+case 4:
+    knowledge_response = "Intelligence follows you wherever you go.  Great name for your dog.";
+    break;
+case 5:
+    knowledge_response = "You are a wise and brilliant person!  Most worthy of knowing Jon.";
+    break;
+default:
+    knowledge_response = "Wow, I hear there is an opening in the job market for couch potatoes.";
+    break;
+}
+knowledge_response = knowledge_response + "  You got " + correct_answers + " answers right and so will be granted ";
+if (correct_answers === 0) {
+    correct_answers = 1;
+}
+knowledge_response = knowledge_response + correct_answers + " chances to guess how many continents Jon has been to.";
+alert (knowledge_response);
+do {
+    how_many = prompt("So, Wise One.  How many continents?");
+    console.log("how many " + how_many);
+    if (how_many == 6) {
+        i = i + 10;
+        how_many_response = "Correct!!  That's amazing, isn't it?";
+        correct_answers = correct_answers + 1;
+    } else {
+        how_many_response = "Nope.  That's " + i + ". Try again.";
+        i = i + 1;
+    }
+    alert (how_many_response);
+    console.log("i = " + i);
+    console.log("correct answers: " + correct_answers);
+} while (i < correct_answers);
+
+// and the big finale
+
+alert ("And now " + user_name + ", time to show me just how amazing you are, or are not.  You will be given " + correct_answers + " chances to name a continent that Jon has NOT been to.  Ready?");
+i = 0;
+do {
+    which_continent = prompt("Which continent has Jon NOT visited (yet!)?");
+    which_continent = which_continent.toLowerCase();
+    if (which_continent === continents[6]) {
+        i = i + 10;
+        console.log("count: " + i)
+        continent_response = "Correct!!  Ice and snow at a hundred below and he still wants to go.  Weird, isn't it?  :-)";
+        continent_toggle = 1;
+        correct_answers = correct_answers + 1;
+    } else {
+        i = i + 1;
+        continent_response = "Sorry, wrong.  That's " + i + ".  Try again.";
+        continent_toggle = 0;
+    }
+    if (i >= correct_answers && continent_toggle === 0) {
+        continent_response = " Wrong.  Are you even trying here " + user_name + "?";
+    }
+    alert (continent_response);
+} while (i < correct_answers);
+
+if (red_blue_toggle === 0 && correct_answers > 4) {
+    wrap_up_response = "The Red Pill was the right choice for you " + user_name + ".  You got " + correct_answers + " correct answers.  You may reward yourself with a hearty pat on the back!";
+}
+if (red_blue_toggle === 0 && correct_answers <= 4) {
+    wrap_up_response = "Well, it could have gone better " + user_name + " but you did pick the right path even if you only got " + correct_answers + " right.";
+}
+if (red_blue_toggle === 1 && correct_answers === 7) {
+    wrap_up_response = "Despite your blue choice in pills " + user_name + " you got all questions right!  Well done!";
+}
+if (red_blue_toggle === 1 && correct_answers <= 4) {
+    wrap_up_response = "Only " + correct_answers + ".  You know, you really aren't supposed to take a blue pill before driving " + user_name + ".  Be safe on the way home.";
+} 
+if (red_blue_toggle === 1 && correct_answers == 0) {
+    wrap_up_response = "None correct.  The Blue Man Group called " + user_name + ".  They want their lead-based paint pills back.  Maybe you shouldn't have taken all of them....";
+}
+if (red_blue_toggle === 1 && correct_answers > 4) {
+    wrap_up_response = correct_answers + " correct.  You know, the blue pill may not have been right for you " + user_name + ".  Just saying....";
+}
+alert(wrap_up_response);
+
+</script>
+
+<p>Congratulations, you've discovered that Jon Ramer is a highly creative person.</p>
+<p> Some of his most interesting experiences are:</p>
+<ul>
+    <li>World traveller, live in:</li>
+        <ol>
+            <li>North America</li>
+            <li>Europe</li>
+            <li>Australia</li>
+        </ol>
+        <li>Avid painter, writer, and photographer</li>
+    <li>Born in the United Kingdom</li>
+    <li>Has two patents</li>
+        <ol>
+            <li>Kinetic microgenerator</li>
+            <li>AirCap</li>
+        </ol>
+</ul>
 </body>
    
